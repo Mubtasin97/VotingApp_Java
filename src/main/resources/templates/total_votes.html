@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Total Votes</title>
+</head>
+<body>
+<h1>Total Votes</h1>
+<ul>
+    <li th:each="candidate : ${candidates}" th:text="${candidate.name} + ': ' + ${candidate.votes.size()}"></li>
+</ul>
+<a href="/admin_dashboard">Back to Dashboard</a>
+</body>
+</html>

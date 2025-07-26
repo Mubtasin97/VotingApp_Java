@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Candidates</title>
+</head>
+<body>
+<h1>Edit Candidates</h1>
+<div th:if="${message}" th:text="${message}"></div>
+<div th:if="${error}" th:text="${error}"></div>
+<form method="post" th:action="@{/add_candidate}">
+    <label>Name: <input type="text" name="name" required/></label>
+    <button type="submit">Add Candidate</button>
+</form>
+<ul>
+    <li th:each="candidate : ${candidates}" th:text="${candidate.name}"></li>
+</ul>
+<a href="/admin_dashboard">Back to Dashboard</a>
+</body>
+</html>

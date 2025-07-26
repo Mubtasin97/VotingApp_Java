@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting App</title>
+</head>
+<body>
+<h1>Voting App</h1>
+<div th:if="${votingStatus.votingActive}">
+    <p>Voting is running</p>
+    <a href="/cast_vote">Cast your vote</a>
+</div>
+<div th:unless="${votingStatus.votingActive}">
+    <p>Cannot vote right now</p>
+</div>
+<a href="/admin_login">Admin Login</a>
+</body>
+</html>

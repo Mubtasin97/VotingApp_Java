@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote for Candidate</title>
+</head>
+<body>
+<h1>Vote for Candidate</h1>
+<form method="post" action="/submit_vote">
+    <label>Select Candidate:
+        <select name="candidateId" required>
+            <option th:each="candidate : ${candidates}" th:value="${candidate.id}" th:text="${candidate.name}"></option>
+        </select>
+    </label>
+    <button type="submit">Submit Vote</button>
+</form>
+<a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+<div th:if="${message}" th:text="${message}"></div>
+<div th:if="${error}" th:text="${error}"></div>
+<h2>Candidates</h2>
+<ul>
+    <li th:each="candidate : ${candidates}" th:text="${candidate.name}"></li>
+</ul>
+<a href="/edit_candidates">Edit Candidates</a><br>
+<form method="post" th:action="@{/start_vote}">
+    <button type="submit">Start Vote</button>
+</form>
+<a href="/total_votes">View Total Votes</a><br>
+<form method="post" th:action="@{/reset_vote}">
+    <button type="submit">Reset Vote</button>
+</form>
+<a href="/logout">Logout</a>
+</body>
+</html>
